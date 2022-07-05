@@ -171,7 +171,7 @@
 				                                   </span>
 												<label for="recipient-name" class="control-label">Service:</label>
 
-												<select name="servicegets" class="form-control input-lg" required="" disabled="true">
+												<select name="servicegets" class="form-control input-lg" required="">
 													<option selected="<?php echo $serviceget;?>"><?php echo $serviceget;?></option>
 													<?php
 										$doc = mysqli_real_escape_string($con,$userRow['doctorFirstName']);
@@ -257,7 +257,7 @@
 													
 												if(!in_array(date("H:i:s", strtotime($availableTime)),$notAvailableTime)){
 										
-											?>
+											?>	
 												<option value="<?php echo date("H:i:s", strtotime($availableTime));?>">
 												<?php echo $availableTime;//display time?></option>
 											<?php 	
@@ -315,8 +315,8 @@
 		$starttime = $_POST['starttime'];
 		$patientname = $pfname ." ". $plname;
 
-		$query = "INSERT INTO schedule (  icPatient ,username, scheduleid, doctorid,scheduleDate ,service_id,servicename,status, startTime,complain)
-		VALUES ( '$patientIc','$username','$scheduleid', '$doctorId', '$appdate','$serviceid','$symptom',default,'$starttime','$comment')";
+		$query = "INSERT INTO schedule (  icPatient ,username, scheduleid, doctorid,scheduleDate ,service_id, servicename ,status, startTime, complain)
+		VALUES ( '$patientIc','$username','$scheduleid', '$doctorId', '$appdate','$serviceid','$symptom', default,'$starttime','$comment')";
 
 		//update table appointment schedule
 
